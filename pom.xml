@@ -76,6 +76,16 @@
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     -->
+    <dependency>
+    	<groupId>com.chatbot</groupId>
+    	<artifactId>firstai</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+    	<groupId>com.example</groupId>
+    	<artifactId>BankingSystem-1</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 
   <build>
