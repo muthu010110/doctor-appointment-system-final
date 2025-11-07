@@ -8,7 +8,7 @@ public class CorsConfig {
 	 @Bean
 	  public WebMvcConfigurer corsConfigurer() {
 	    String allowed = System.getenv().getOrDefault(
-	        "CORS_ALLOWED_ORIGIN", "https://your-frontend.onrender.com");
+	        "CORS_ALLOWED_ORIGIN", "https://doctor-appoinment-system-frontend.onrender.com");
 	    return new WebMvcConfigurer() {
 	      @Override public void addCorsMappings(CorsRegistry registry) {
 	        registry.addMapping("/**")
