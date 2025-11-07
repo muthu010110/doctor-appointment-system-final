@@ -68,14 +68,7 @@
     <artifactId>spring-security-crypto</artifactId>
 	</dependency>
 
-    <!-- REMOVE or keep only if this artifact exists in your repos/.m2 -->
-    <!--
-    <dependency>
-      <groupId>com.chatbot</groupId>
-      <artifactId>firstai</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-    </dependency>
-    -->
+    
     <dependency>
     	<groupId>com.chatbot</groupId>
     	<artifactId>firstai</artifactId>
