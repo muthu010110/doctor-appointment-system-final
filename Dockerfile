@@ -1,14 +1,21 @@
 # ---- Build stage ----
-FROM eclipse-temurin:17-jdk AS build
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
-COPY . .
-# make wrapper runnable + fix CRLF, then build
-RUN chmod +x mvnw && sed -i 's/\r$//' mvnw && ./mvnw -q -DskipTests package
+
+COPY pom.xml .
+RUN mvn -q dependency:go-offline
+
+COPY src ./src
+RUN mvn -q -DskipTests clean package
 
 # ---- Run stage ----
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:17-jdk
 WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
+
+# copy the built jar
+COPY --from=build /app/target/Doctor-Appoinment-System-0.0.1-SNAPSHOT.jar app.jar
+
 ENV PORT=8080
 EXPOSE 8080
-CMD ["sh","-c","java -jar app.jar --server.port=${PORT}"]
+
+ENTRYPOINT ["java","-Dserver.port=${PORT}","-jar","app.jar"]
