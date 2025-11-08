@@ -13,7 +13,9 @@ import com.example.demo.Service.UserService;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000",
+		
+"https://doctor-appoinment-system-frontend.onrender.com"})
 public class UserController {
 
     @Autowired
