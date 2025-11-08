@@ -13,7 +13,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/appointment")
-@CrossOrigin(origins = "http://localhost:3000") 
+@CrossOrigin(origins = {"http://localhost:3000", "https://doctor-appoinment-system-frontend.onrender.com"}) 
 public class AppointmentController {
 
     @Autowired
